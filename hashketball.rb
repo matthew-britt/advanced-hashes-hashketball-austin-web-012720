@@ -192,9 +192,28 @@ def player_stats(players_name)
 end
 
 def big_shoe_rebounds
-  game_hash.max |place, team|
+  shoe_hash = {} 
+  game_hash.max do |place, team|
+    team.each do |key, value|
+      if key == :players 
+        value.each do |player|
+          shoe_hash[player[:player_name]] = player[:shoe]
+        end
+      end
+      
+    end
+  end
+  max_value = 0 
+  key_for_max = nil 
+  
+  shoe_hash.each_pair do |key, value|
+    if value > max_value
+      max_value = value 
+      key_for_max = key 
+    end
     
-end
+  end
+  return player_stats(key_for_max)[:rebounds]
 end
 
 
