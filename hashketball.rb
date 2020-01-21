@@ -215,7 +215,14 @@ def big_shoe_rebounds
   return player_stats(key_for_max)[:rebounds]
 end
 
-
+def most_points_scored
+  points_hash = {}
+  game_hash.each do |place, team|
+    team.each do |key, value|
+      
+    end
+  end
+end
 
 
 
