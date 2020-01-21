@@ -238,6 +238,24 @@ def most_points_scored
   return key_for_max 
 end
 
+def winning_team
+  home_points_array = []
+  away_points_array = []
+  game_hash[:home][:players].map do |player|
+    home_points_array << player[:points]
+  end
+  total_home_points = home_points_array.reduce(0) do |total, num|
+    total + num 
+  end 
+  game_hash[:away][:players].map do |player|
+    away_points_array << player[:points]
+  end 
+  total_away_points = away_points_array.reduce(0) do |total, num|
+    total + num 
+  end
+  total_home_points > total_away_points ? total_home_points : total_away_points
+end
+
 
 
 
