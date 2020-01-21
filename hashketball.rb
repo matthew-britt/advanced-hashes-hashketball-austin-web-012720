@@ -193,7 +193,7 @@ end
 
 def big_shoe_rebounds
   shoe_hash = {} 
-  game_hash.max do |place, team|
+  game_hash.each do |place, team|
     team.each do |key, value|
       if key == :players 
         value.each do |player|
