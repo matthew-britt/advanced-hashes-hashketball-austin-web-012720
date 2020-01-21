@@ -253,7 +253,7 @@ def winning_team
   total_away_points = away_points_array.reduce(0) do |total, num|
     total + num 
   end
-  total_home_points > total_away_points ? total_home_points : total_away_points
+  total_home_points > total_away_points ? game_hash[:home][:team_name] : game_hash[:away][:team_name]
 end
 
 
