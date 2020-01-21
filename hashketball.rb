@@ -200,7 +200,6 @@ def big_shoe_rebounds
           shoe_hash[player[:player_name]] = player[:shoe]
         end
       end
-      
     end
   end
   max_value = 0 
@@ -215,6 +214,7 @@ def big_shoe_rebounds
   end
   return player_stats(key_for_max)[:rebounds]
 end
+
 
 
 
