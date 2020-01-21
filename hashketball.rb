@@ -265,6 +265,7 @@ def player_with_longest_name
           player_names_array << player[:player_name]
         end
       end
+      binding.pry 
     end
   end
   player_names_array.max_by {|name| name.length}
